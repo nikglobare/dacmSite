@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="data:;base64,=">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DACM End Of Line Defects</title>
+    <link rel="stylesheet" href="teststyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div id="left-menu">
+        <ul>
+            <li id="floor-layout-option">Floor Layout</li>
+            <li id="pareto-option">Pareto</li>
+            <li id="production-option">Production</li>
+            <li id="status-option">I-Status</li>
+            <li id="geo-option">GEO <i class="fas fa-external-link-alt"></i></li>
+        </ul>
+    </div>
+    <h1>SPW Maintenance Domain 
+        <br>DACM End of Line Defect Screen</h1>
+        <img src="images/logo.png" alt="Logo" id="logo">
+        <span id="last-refresh" style="font-size: smaller; margin-left: 20px;">
+            Last Refresh:<br>
+        </span>
+        
+
+    <div id="background-container">
+        <img src="images/floorLayout.svg" alt="Background Photo" class="background-photo">
+        
+    </div>
+    <div id="problem-table-container"></div>
+    <div id="vin-table-container"></div>
+
+    <div id="pareto-chart-container">
+        <div id="chart-wrapper">
+            <canvas id="paretoChart"></canvas>
+        </div>
+        <button id="saveChartBtn">Save Chart as Image</button>
+    </div>
+
+    <div id="button-container">
+
+    </div>
+
+    <div id="istatus-table-container">
+        <button id="exportToExcelBtn">Export to Excel</button>
+    </div>
+    
+
+    <div id="production-table-container">
+        <button id="exportToExcelBtn">Export to Excel</button>
+    </div>
+
+    <div id="legend-container">
+        <div class="legend-item">
+            <div class="color-box" style="background-color: blue;"></div>
+            <span>>= 95% OPE</span>
+        </div>
+        <div class="legend-item">
+            <div class="color-box" style="background-color: green;"></div>
+            <span>>= PC1 Target < 95% OPE</span>
+        </div>
+        <div class="legend-item">
+            <div class="color-box" style="background-color: red;"></div>
+            <span>< PC1 Target</span>
+        </div>
+        <div class="legend-item">
+            <div class="color-box" style="background-color: lightgrey; border: 1px solid black;">XX</div>
+            <span>= Break / Lunch Hour</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="table.js"></script>
+    <script src="pareto.js"></script>
+    <script src="vinTable.js"></script>
+    
+    <script src="geo.js"></script> 
+    <script src="istatus.js"></script>
+    <script src="production.js"></script> 
+    <script src="menu.js"></script> <!-- Include the new JS file -->
+</body>
+</html>

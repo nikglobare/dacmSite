@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "ibm_db": "^3.2.4",
+    "mssql": "^7.2.0",
+    "oracledb": "^6.5.1"
+  }
+}
